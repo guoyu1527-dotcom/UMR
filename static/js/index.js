@@ -21,6 +21,20 @@ window.addEventListener('DOMContentLoaded', function () {
   function getViewerHint(viewer) { if (!viewer) return null; var container = viewer.closest('.interactive-card--viewer,.dataset-block--viewer'); return container ? container.querySelector('[data-viser-hint]') : null }
   function setViewerHintVisible(viewer, visible) { var hint = getViewerHint(viewer); if (hint) hint.classList.toggle('is-hidden', !visible) }
   function setViewerPlaybackDock(viewer, enabled) { if (viewer && viewer.parentElement) viewer.parentElement.classList.toggle('pw-viser-with-playback', !!enabled) }
+  function setViewerOpenLink(viewer, src) {
+    if (!viewer || !viewer.parentElement) return;
+    var link = viewer.parentElement.querySelector('.viser-open-link');
+    if (!link) {
+      link = document.createElement('a');
+      link.className = 'viser-open-link';
+      link.target = '_blank';
+      link.rel = 'noopener';
+      link.textContent = 'Open viewer in new tab';
+      viewer.parentElement.appendChild(link);
+    }
+    link.href = src;
+    link.classList.remove('is-hidden');
+  }
   function setViewerBanner(banner, isPlaceholder) {
     if (!banner) return;
     if (isPlaceholder) { banner.textContent = VISER_PLACEHOLDER_TEXT; banner.classList.add('is-placeholder'); banner.classList.remove('is-hidden') }
@@ -60,7 +74,9 @@ window.addEventListener('DOMContentLoaded', function () {
   async function loadViewer(viewer, banner, base, filename, camera, dockPlayback) {
     if (!viewer) return;
 
-    viewer.src = buildViewerSrc(base, filename, camera, dockPlayback);
+    var src = buildViewerSrc(base, filename, camera, dockPlayback);
+    viewer.src = src;
+    setViewerOpenLink(viewer, src);
 
     viewer.dataset.base = base;
 
