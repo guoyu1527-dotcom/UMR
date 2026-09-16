@@ -1,0 +1,8 @@
+{
+  "fps": 12,
+  "point_size": 0.005,
+  "point_shape": "rounded",
+  "edge_line_width": 2.0,
+  "show_grid": true,
+  "up_direction": "+z"
+}

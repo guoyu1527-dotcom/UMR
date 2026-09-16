@@ -2,13 +2,651 @@
 <html>
 
 <head>
-  <meta charset="UTF-8">
-  <title>Anonymous Project Page</title>
+  <meta charset="utf-8">
+  <meta name="description"
+    content="UMR: Universal Manipulation Representation for zero-shot cross-embodiment manipulation.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UMR | Universal Manipulation Representation</title>
+  <meta property="og:title" content="UMR: Universal Manipulation Representation">
+  <meta property="og:description"
+    content="Coupled World-Flow and Ego-Trajectory for transferable manipulation learning.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="media/umr-preview.png">
+  <meta property="og:image:width" content="1920">
+  <meta property="og:image:height" content="1080">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:alt" content="UMR point-cloud review preview">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="media/umr-preview.png">
+  <link rel="icon" href="media/preview-card-180p.jpg" type="image/jpeg">
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+  <link href="./static/css/index.css" rel="stylesheet">
+  <script src="./config/site-config.js"></script>
+  <script defer src="./static/js/index.js"></script>
 </head>
 
 <body>
-  <h1>Project Page</h1>
-  <p>Supplementary project page for anonymous review.</p>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-fullhd">
+        <div class="columns is-centered">
+          <div class="column is-10 has-text-centered">
+            <h1 class="title is-1 publication-title" id="paper-title">UMR: Universal Manipulation Representation</h1>
+
+            <div class="is-size-5 publication-authors" id="paper-authors">
+              <span class="author-block"><a href="#">Author One</a><sup>1</sup>,</span>
+              <span class="author-block"><a href="#">Author Two</a><sup>2</sup></span>
+            </div>
+            <div class="is-size-5 affiliation" id="paper-affiliation"><sup>1</sup>Your University, <sup>2</sup>Your Lab
+            </div>
+            <div class="affiliation-note" id="paper-affiliation-note">Author note</div>
+            <div class="publication-venue" id="paper-venue">Conference 2026</div>
+            <div class="publication-awards" id="paper-award">Optional award line</div>
+
+            <div class="button-container">
+              <a class="button" id="link-pdf" href="#" target="_blank" rel="noopener"><i
+                  class="fa-regular fa-file"></i>&nbsp;PDF</a>
+              <a class="button" id="link-arxiv" href="#" target="_blank" rel="noopener"><i
+                  class="fa-solid fa-book-open"></i>&nbsp;arXiv</a>
+              <a class="button" id="link-explainer" href="#" target="_blank" rel="noopener"><i
+                  class="fa-regular fa-film"></i>&nbsp;Explainer</a>
+              <a class="button" id="link-talk" href="#" target="_blank" rel="noopener"><i
+                  class="fa-regular fa-circle-play"></i>&nbsp;Long Talk</a>
+              <a class="button" id="link-tldr" href="#" target="_blank" rel="noopener"><i
+                  class="fa-brands fa-x-twitter"></i>&nbsp;tl;dr</a>
+              <a class="button" id="link-code" href="#" target="_blank" rel="noopener"><i
+                  class="fa-solid fa-code"></i>&nbsp;Code</a>
+              <div class="resource-menu">
+                <button aria-haspopup="menu" class="button resource-trigger" type="button">
+                  <i class="fa-solid fa-database"></i>&nbsp;Data &amp; Ckpts
+                  <i class="fa-solid fa-chevron-down resource-caret"></i>
+                </button>
+                <div aria-label="Data and checkpoints" class="resource-dropdown" role="menu">
+                  <a class="resource-link" id="link-data1" href="#" role="menuitem" target="_blank"><span>PLY Review
+                      Bundle</span><small>Pixel-filter review export</small></a>
+                  <a class="resource-link" id="link-data2" href="#" role="menuitem" target="_blank"><span>Scene
+                      Manifest</span><small>Interactive samples</small></a>
+                  <a class="resource-link" id="link-checkpoints" href="#" role="menuitem"
+                    target="_blank"><span>Checkpoints</span><small>Model weights</small></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section teaser-section">
+    <div class="container is-max-widescreen">
+      <figure class="image teaser-image">
+        <video autoplay muted loop playsinline controls preload="metadata" poster="media/umr-preview.png"
+          aria-label="Project teaser">
+          <source src="media/umr-rh20t-data-filter.mp4" type="video/mp4">
+        </video>
+      </figure>
+      <h2 class="subtitle has-text-centered teaser-caption" id="teaser-caption"
+        style="--teaser-caption-size:1.0rem;--teaser-caption-line-height:1.55;">
+        Replace this sentence with your one-line paper summary.
+      </h2>
+    </div>
+  </section>
+
+  <section class="section" id="abstract">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-left">
+        <div class="column">
+          <h2 class="title is-3 has-text-centered">Abstract</h2>
+          <div class="content has-text-justified">
+            <p id="abstract-copy">UMR decomposes manipulation into World-Flow and Ego-Trajectory, coupling transferable
+              object motion with executable robot-local actions.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="method">
+    <div class="container is-max-widescreen">
+      <h2 class="title is-3 has-text-centered">Method Overview</h2>
+      <p class="content has-text-justified">
+        UMR describes the same manipulation motion from two coupled coordinate views. World-Flow captures transferable
+        object-level motion in the world frame, while Ego-Trajectory expresses the executable end-effector motion in the
+        current gripper frame. An SE(3) conjugate transformation links both streams, so a task learned from human
+        demonstrations can be converted into robot-local actions at deployment.
+      </p>
+      <div class="method-grid">
+        <article class="method-card">
+          <span class="method-index">01</span>
+          <h3 class="title is-5">World-Flow</h3>
+          <p>Embodiment-agnostic task motion represented as a structured SE(3) trajectory in the world frame.</p>
+        </article>
+        <article class="method-card">
+          <span class="method-index">02</span>
+          <h3 class="title is-5">Ego-Trajectory</h3>
+          <p>Controller-aligned end-effector motion represented relative to the current pose for execution.</p>
+        </article>
+        <article class="method-card">
+          <span class="method-index">03</span>
+          <h3 class="title is-5">WEP-VLA</h3>
+          <p>A compact 0.5B point-cloud VLA with dual-stream Point Action Adapters and a shared Point Action Expert.</p>
+        </article>
+      </div>
+      <figure class="paper-figure">
+        <img src="media/umr-real-task.png" alt="UMR real-world task and point-cloud material overview">
+        <figcaption>Real-world task material exported from UMR_NEW, including task setup and point-cloud assets.
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section" id="walkthrough">
+    <div class="container is-max-widescreen">
+      <h2 class="title is-3 has-text-centered">Walkthrough Video</h2>
+      <div class="columns is-centered">
+        <div class="column is-full has-text-centered">
+          <div class="walkthrough-frame">
+            <video id="walkthrough-local" controls playsinline preload="metadata">
+              <source src="media/umr-rh20t-data-filter.mp4" type="video/mp4">
+            </video>
+            <iframe id="walkthrough-youtube" class="is-hidden" title="Walkthrough video"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="benchmark-results">
+    <div class="container is-max-widescreen">
+      <h2 class="title is-3 has-text-centered">Benchmark Results</h2>
+      <p class="content has-text-justified">
+        WEP-VLA instantiates UMR as a compact 0.5B-parameter point-cloud VLA. The policy learns coupled
+        World-Flow and Ego-Trajectory supervision, then executes the ego-frame action stream at inference.
+      </p>
+      <div class="results-grid">
+        <article class="result-card">
+          <span class="result-kicker">RLBench</span>
+          <strong class="result-number">85.7%</strong>
+          <p>Mean success across 10 tasks, outperforming PointACT (82.3%) while using a smaller 0.5B model.</p>
+        </article>
+        <article class="result-card">
+          <span class="result-kicker">LIBERO</span>
+          <strong class="result-number">97.5%</strong>
+          <p>Average success across Spatial, Object, Goal, and Long-Horizon suites with 10 train tasks.</p>
+        </article>
+        <article class="result-card">
+          <span class="result-kicker">Representation</span>
+          <strong class="result-number">World + Ego</strong>
+          <p>World-Flow captures transferable task motion; Ego-Trajectory provides executable robot-local control.</p>
+        </article>
+      </div>
+      <div class="table-container result-table-wrap">
+        <table class="table is-fullwidth is-striped result-table">
+          <thead>
+            <tr>
+              <th>Benchmark</th>
+              <th>Model</th>
+              <th>Model Size</th>
+              <th>Mean / Avg. Success</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>RLBench 10 tasks</td>
+              <td>HybridVLA</td>
+              <td>7B</td>
+              <td>74.0</td>
+            </tr>
+            <tr>
+              <td>RLBench 10 tasks</td>
+              <td>PointACT</td>
+              <td>3B</td>
+              <td>82.3</td>
+            </tr>
+            <tr>
+              <td>RLBench 10 tasks</td>
+              <td><strong>WEP-VLA (Ours)</strong></td>
+              <td>0.5B</td>
+              <td><strong>85.7</strong></td>
+            </tr>
+            <tr>
+              <td>LIBERO 4 suites</td>
+              <td>PointACT</td>
+              <td>3B</td>
+              <td>96.0</td>
+            </tr>
+            <tr>
+              <td>LIBERO 4 suites</td>
+              <td>OpenVLA-OFT</td>
+              <td>7B</td>
+              <td>97.1</td>
+            </tr>
+            <tr>
+              <td>LIBERO 4 suites</td>
+              <td><strong>WEP-VLA (Ours)</strong></td>
+              <td>0.5B</td>
+              <td><strong>97.5</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <h3 class="title is-4 has-text-centered result-subtitle">Real-World Transfer</h3>
+      <div class="table-container result-table-wrap">
+        <table class="table is-fullwidth is-striped result-table">
+          <thead>
+            <tr>
+              <th>Method</th>
+              <th>Type</th>
+              <th>Cube</th>
+              <th>Mug</th>
+              <th>Money</th>
+              <th>Micro</th>
+              <th>Avg.</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Pi0.5</td>
+              <td>Finetune</td>
+              <td>74</td>
+              <td>85</td>
+              <td>54</td>
+              <td>16</td>
+              <td>63.03</td>
+            </tr>
+            <tr>
+              <td>SPOT</td>
+              <td>Postprocess</td>
+              <td>86</td>
+              <td>95</td>
+              <td>67</td>
+              <td>33</td>
+              <td>75.91</td>
+            </tr>
+            <tr>
+              <td>HumanEgo</td>
+              <td>Postprocess</td>
+              <td>71</td>
+              <td>73</td>
+              <td>48</td>
+              <td>14</td>
+              <td>60.69</td>
+            </tr>
+            <tr>
+              <td><strong>WEP-VLA (Ours)</strong></td>
+              <td>End-to-end</td>
+              <td><strong>100</strong></td>
+              <td><strong>100</strong></td>
+              <td><strong>92</strong></td>
+              <td><strong>85</strong></td>
+              <td><strong>96.17</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="results-grid">
+        <article class="result-card">
+          <span class="result-kicker">Ablation</span>
+          <strong class="result-number">97.50</strong>
+          <p>Full UMR average on LIBERO, compared with 81.65 for the original action interface.</p>
+        </article>
+        <article class="result-card">
+          <span class="result-kicker">Real Tasks</span>
+          <strong class="result-number">6</strong>
+          <p>Cube stacking, trash sweeping, mug rack, towel folding, and cross-robot variants.</p>
+        </article>
+        <article class="result-card">
+          <span class="result-kicker">Human Data</span>
+          <strong class="result-number">Zero-shot</strong>
+          <p>Human demonstrations are mapped to a virtual parallel-jaw gripper for robot execution.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="dataset-media">
+    <div class="container is-max-widescreen">
+      <h2 class="title is-3 has-text-centered">Heterogeneous Demonstrations</h2>
+      <p class="content has-text-justified">
+        The UMR_NEW dataset media contains 26 RGB demonstration episodes across RH20T, LIBERO, RLBench, DynamicCube,
+        and StageGenMerged. These clips show the diversity of manipulation sources used to stress-test a shared
+        World-Ego action representation.
+      </p>
+      <div class="media-grid">
+        <article class="media-card">
+          <video autoplay muted loop playsinline controls preload="metadata">
+            <source src="media/videos/dataset-rh20t.mp4" type="video/mp4">
+          </video>
+          <h3>RH20T</h3>
+          <p>Real RGB-D manipulation demonstrations, including pressing, napkin pulling, and drawer opening.</p>
+        </article>
+        <article class="media-card">
+          <video autoplay muted loop playsinline controls preload="metadata">
+            <source src="media/videos/dataset-libero.mp4" type="video/mp4">
+          </video>
+          <h3>LIBERO</h3>
+          <p>Spatial, object, goal, and long-horizon tasks reconstructed as RGB-D demonstrations.</p>
+        </article>
+        <article class="media-card">
+          <video autoplay muted loop playsinline controls preload="metadata">
+            <source src="media/videos/dataset-rlbench.mp4" type="video/mp4">
+          </video>
+          <h3>RLBench</h3>
+          <p>Simulation skills spanning articulated objects, grasp manipulation, tool use, and watering.</p>
+        </article>
+        <article class="media-card">
+          <video autoplay muted loop playsinline controls preload="metadata">
+            <source src="media/videos/dataset-dynamiccube.mp4" type="video/mp4">
+          </video>
+          <h3>DynamicCube</h3>
+          <p>Dynamic cube stacking examples for spatially grounded object motion.</p>
+        </article>
+        <article class="media-card">
+          <video autoplay muted loop playsinline controls preload="metadata">
+            <source src="media/videos/dataset-stagegen.mp4" type="video/mp4">
+          </video>
+          <h3>StageGenMerged</h3>
+          <p>Synthetic and merged demonstrations for towel folding and trash sweeping.</p>
+        </article>
+        <article class="media-card">
+          <video autoplay muted loop playsinline controls preload="metadata">
+            <source src="media/videos/umr-failure-attach-fall.mp4" type="video/mp4">
+          </video>
+          <h3>Failure Case</h3>
+          <p>Attach-but-fall behavior retained for strict qualitative review and paper discussion.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="interactive-results">
+    <div class="container is-max-widescreen">
+      <h2 class="title is-3 has-text-centered">Interactive Results</h2>
+
+      <div class="interactive-instructions">
+        <div class="interactive-instructions-body">
+          <p id="interactive-intro">Pick a scene below to view RGB-D inputs, prediction, and ground truth.</p>
+          <ul>
+            <li><strong>Policy:</strong> WEP-VLA learns coupled World-Flow and Ego-Trajectory action chunks.</li>
+            <li><strong>Inputs:</strong> RH20T RGB-D observations and <span
+                class="interactive-highlight-magenta">virtual gripper trajectories</span>.</li>
+            <li><strong>Outputs:</strong> <span class="interactive-highlight-rainbow">single-view filtered point
+                clouds</span> aligned with multiview references.</li>
+          </ul>
+
+          <div class="interactive-row" id="interactive-row-droid">
+            <div class="interactive-left-label">UMR RH20T</div>
+            <div class="interactive-right">
+              <div class="interactive-carousel" id="interactive-carousel-droid" role="region">
+                <button aria-label="Previous interactive sample" class="interactive-arrow" data-direction="prev"
+                  type="button">‹</button>
+                <div class="interactive-thumbs" id="interactive-thumb-row-droid" role="tablist">
+                  <button class="interactive-thumb" type="button" aria-label="cfg2 / episode 1" aria-pressed="false"
+                    data-base="interactive/umr-scenes/scene-01" data-label="cfg2 / episode 1"
+                    data-camera-position="0.85,-1.05,0.75" data-camera-lookat="0.00,0.00,0.10"
+                    data-camera-up="0.000,0.000,1.000">
+                    <img src="interactive/umr-scenes/scene-01/cameras-rgb/cam0.png" alt="cfg2 / episode 1 thumbnail">
+                  </button>
+                  <button class="interactive-thumb" type="button" aria-label="cfg2 / episode 2" aria-pressed="false"
+                    data-base="interactive/umr-scenes/scene-02" data-label="cfg2 / episode 2"
+                    data-camera-position="0.85,-1.05,0.75" data-camera-lookat="0.00,0.00,0.10"
+                    data-camera-up="0.000,0.000,1.000">
+                    <img src="interactive/umr-scenes/scene-02/cameras-rgb/cam0.png" alt="cfg2 / episode 2 thumbnail">
+                  </button>
+                  <button class="interactive-thumb" type="button" aria-label="cfg3" aria-pressed="false"
+                    data-base="interactive/umr-scenes/scene-03" data-label="cfg3" data-camera-position="0.85,-1.05,0.75"
+                    data-camera-lookat="0.00,0.00,0.10" data-camera-up="0.000,0.000,1.000">
+                    <img src="interactive/umr-scenes/scene-03/cameras-rgb/cam0.png" alt="cfg3 thumbnail">
+                  </button>
+                  <button class="interactive-thumb" type="button" aria-label="cfg4" aria-pressed="false"
+                    data-base="interactive/umr-scenes/scene-04" data-label="cfg4" data-camera-position="0.85,-1.05,0.75"
+                    data-camera-lookat="0.00,0.00,0.10" data-camera-up="0.000,0.000,1.000">
+                    <img src="interactive/umr-scenes/scene-04/cameras-rgb/cam0.png" alt="cfg4 thumbnail">
+                  </button>
+                  <button class="interactive-thumb" type="button" aria-label="cfg5" aria-pressed="false"
+                    data-base="interactive/umr-scenes/scene-05" data-label="cfg5" data-camera-position="0.85,-1.05,0.75"
+                    data-camera-lookat="0.00,0.00,0.10" data-camera-up="0.000,0.000,1.000">
+                    <img src="interactive/umr-scenes/scene-05/cameras-rgb/cam0.png" alt="cfg5 thumbnail">
+                  </button>
+                  <button class="interactive-thumb" type="button" aria-label="cfg6" aria-pressed="false"
+                    data-base="interactive/umr-scenes/scene-06" data-label="cfg6" data-camera-position="0.85,-1.05,0.75"
+                    data-camera-lookat="0.00,0.00,0.10" data-camera-up="0.000,0.000,1.000">
+                    <img src="interactive/umr-scenes/scene-06/cameras-rgb/cam0.png" alt="cfg6 thumbnail">
+                  </button>
+                  <button class="interactive-thumb" type="button" aria-label="cfg7" aria-pressed="false"
+                    data-base="interactive/umr-scenes/scene-07" data-label="cfg7" data-camera-position="0.85,-1.05,0.75"
+                    data-camera-lookat="0.00,0.00,0.10" data-camera-up="0.000,0.000,1.000">
+                    <img src="interactive/umr-scenes/scene-07/cameras-rgb/cam0.png" alt="cfg7 thumbnail">
+                  </button>
+                </div>
+                <button aria-label="Next interactive sample" class="interactive-arrow" data-direction="next"
+                  type="button">›</button>
+              </div>
+              <div class="interactive-pagination" id="interactive-dots-droid"></div>
+            </div>
+          </div>
+
+          <div class="interactive-row is-hidden" id="interactive-row-b1k">
+            <div class="interactive-left-label">BEHAVIOR (simulated)</div>
+            <div class="interactive-right">
+              <div class="interactive-carousel" id="interactive-carousel-b1k" role="region">
+                <button aria-label="Previous interactive sample" class="interactive-arrow" data-direction="prev"
+                  type="button">‹</button>
+                <div class="interactive-thumbs" id="interactive-thumb-row-b1k" role="tablist">
+                  <button class="interactive-thumb" type="button" aria-label="scene-01" aria-pressed="false"
+                    data-base="interactive/b1k-scenes/scene-01" data-label="scene-01"
+                    data-camera-position="0.65,0.60,0.20" data-camera-lookat="0.00,0.00,0.00"
+                    data-camera-up="0.000,0.000,1.000">
+                    <img src="interactive/b1k-scenes/scene-01/cameras-rgb/cam0.png" alt="scene-01 thumbnail">
+                  </button>
+                  <button class="interactive-thumb" type="button" aria-label="scene-02" aria-pressed="false"
+                    data-base="interactive/b1k-scenes/scene-02" data-label="scene-02"
+                    data-camera-position="-0.30,0.40,0.40" data-camera-lookat="0.00,0.10,0.35"
+                    data-camera-up="0.000,0.000,1.000">
+                    <img src="interactive/b1k-scenes/scene-02/cameras-rgb/cam0.png" alt="scene-02 thumbnail">
+                  </button>
+                  <button class="interactive-thumb" type="button" aria-label="scene-03" aria-pressed="false"
+                    data-base="interactive/b1k-scenes/scene-03" data-label="scene-03"
+                    data-camera-position="-0.30,1.20,0.80" data-camera-lookat="0.00,0.00,0.00"
+                    data-camera-up="0.000,0.000,1.000">
+                    <img src="interactive/b1k-scenes/scene-03/cameras-rgb/cam0.png" alt="scene-03 thumbnail">
+                  </button>
+                  <button class="interactive-thumb" type="button" aria-label="scene-04" aria-pressed="false"
+                    data-base="interactive/b1k-scenes/scene-04" data-label="scene-04"
+                    data-camera-position="-0.25,0.00,1.00" data-camera-lookat="0.00,0.00,0.20"
+                    data-camera-up="0.000,0.000,1.000">
+                    <img src="interactive/b1k-scenes/scene-04/cameras-rgb/cam0.png" alt="scene-04 thumbnail">
+                  </button>
+                  <button class="interactive-thumb" type="button" aria-label="scene-05" aria-pressed="false"
+                    data-base="interactive/b1k-scenes/scene-05" data-label="scene-05"
+                    data-camera-position="0.60,0.00,0.50" data-camera-lookat="0.00,0.00,0.30"
+                    data-camera-up="0.000,0.000,1.000">
+                    <img src="interactive/b1k-scenes/scene-05/cameras-rgb/cam0.png" alt="scene-05 thumbnail">
+                  </button>
+                  <button class="interactive-thumb" type="button" aria-label="scene-06" aria-pressed="false"
+                    data-base="interactive/b1k-scenes/scene-06" data-label="scene-06"
+                    data-camera-position="0.00,1.30,1.30" data-camera-lookat="0.00,0.00,0.50"
+                    data-camera-up="0.000,0.000,1.000">
+                    <img src="interactive/b1k-scenes/scene-06/cameras-rgb/cam0.png" alt="scene-06 thumbnail">
+                  </button>
+                  <button class="interactive-thumb" type="button" aria-label="scene-07" aria-pressed="false"
+                    data-base="interactive/b1k-scenes/scene-07" data-label="scene-07"
+                    data-camera-position="-0.45,0.50,1.40" data-camera-lookat="0.00,0.00,0.85"
+                    data-camera-up="0.000,0.000,1.000">
+                    <img src="interactive/b1k-scenes/scene-07/cameras-rgb/cam0.png" alt="scene-07 thumbnail">
+                  </button>
+                  <button class="interactive-thumb" type="button" aria-label="scene-08" aria-pressed="false"
+                    data-base="interactive/b1k-scenes/scene-08" data-label="scene-08"
+                    data-camera-position="1.00,1.00,1.30" data-camera-lookat="0.00,0.00,0.70"
+                    data-camera-up="0.000,0.000,1.000">
+                    <img src="interactive/b1k-scenes/scene-08/cameras-rgb/cam0.png" alt="scene-08 thumbnail">
+                  </button>
+                  <button class="interactive-thumb" type="button" aria-label="scene-09" aria-pressed="false"
+                    data-base="interactive/b1k-scenes/scene-09" data-label="scene-09"
+                    data-camera-position="-0.75,-0.50,0.40" data-camera-lookat="0.00,0.00,0.40"
+                    data-camera-up="0.000,0.000,1.000">
+                    <img src="interactive/b1k-scenes/scene-09/cameras-rgb/cam0.png" alt="scene-09 thumbnail">
+                  </button>
+                </div>
+                <button aria-label="Next interactive sample" class="interactive-arrow" data-direction="next"
+                  type="button">›</button>
+              </div>
+              <div class="interactive-pagination" id="interactive-dots-b1k"></div>
+            </div>
+          </div>
+
+          <p class="interactive-note" id="interactive-note"><strong>NOTE:</strong> Prediction shows single-view
+            filtering; the reference viewer shows multiview reconstruction.
+          </p>
+        </div>
+      </div>
+
+      <div class="interactive-panel" id="interactive-panel">
+        <div class="interactive-card interactive-card--inputs" id="interactive-inputs-droid">
+          <h3 class="title is-5">RH20T Frame and Review Projection
+            <span class="hint-banner hint-banner--zoom">Hover to zoom</span>
+          </h3>
+          <div class="interactive-image-grid">
+            <figure><img data-role="rgb0" src="interactive/umr-scenes/scene-01/cameras-rgb/cam0.png">
+              <figcaption>RGB cam0</figcaption>
+            </figure>
+            <figure><img data-role="depth0" src="interactive/umr-scenes/scene-01/cameras-depth/cam0.png">
+              <figcaption>Projection comparison</figcaption>
+            </figure>
+            <figure><img data-role="rgb1" src="interactive/umr-scenes/scene-01/cameras-rgb/cam1.png">
+              <figcaption>Single vs multiview</figcaption>
+            </figure>
+            <figure><img data-role="depth1" src="interactive/umr-scenes/scene-01/cameras-depth/cam1.png">
+              <figcaption>Source RGB</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="interactive-card interactive-card--inputs is-hidden" id="interactive-inputs-b1k">
+          <h3 class="title is-5">RH20T Frame and Review Projection
+            <span class="hint-banner hint-banner--zoom">Hover to zoom</span>
+          </h3>
+          <div class="interactive-image-grid interactive-image-grid--b1k">
+            <figure><img data-role="rgb0" src="interactive/b1k-scenes/scene-01/cameras-rgb/cam0.png">
+              <figcaption>RGB cam0</figcaption>
+            </figure>
+            <figure><img data-role="rgb1" src="interactive/b1k-scenes/scene-01/cameras-rgb/cam1.png">
+              <figcaption>RGB cam1</figcaption>
+            </figure>
+            <figure><img data-role="rgb2" src="interactive/b1k-scenes/scene-01/cameras-rgb/cam2.png">
+              <figcaption>RGB cam2</figcaption>
+            </figure>
+            <figure><img data-role="depth0" src="interactive/b1k-scenes/scene-01/cameras-depth/cam0.png">
+              <figcaption>Depth cam0</figcaption>
+            </figure>
+            <figure><img data-role="depth1" src="interactive/b1k-scenes/scene-01/cameras-depth/cam1.png">
+              <figcaption>Depth cam1</figcaption>
+            </figure>
+            <figure><img data-role="depth2" src="interactive/b1k-scenes/scene-01/cameras-depth/cam2.png">
+              <figcaption>Depth cam2</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="interactive-card interactive-card--viewer">
+          <h3 class="title is-5"><span class="interactive-highlight-rainbow">Single-View Filtered Point Cloud</span>
+            Prediction
+            <span class="hint-banner hint-banner--move is-hidden" data-viser-hint="interactive-pred">Click and move
+              me</span>
+          </h3>
+          <div class="interactive-viewer">
+            <div class="viser-banner viser-banner--interactive is-placeholder">choose a scene above to view interactive
+              visualization</div>
+            <iframe allow="fullscreen xr-spatial-tracking" class="interactive-iframe" id="interactive-pred"
+              loading="lazy" title="Prediction viewer"></iframe>
+          </div>
+        </div>
+
+        <div class="interactive-card interactive-card--viewer">
+          <h3 class="title is-5">Multiview Reference
+            <span class="hint-banner hint-banner--move is-hidden" data-viser-hint="interactive-gt">Click and move
+              me</span>
+          </h3>
+          <div class="interactive-viewer">
+            <div class="viser-banner viser-banner--interactive is-placeholder">choose a scene above to view interactive
+              visualization</div>
+            <iframe allow="fullscreen xr-spatial-tracking" class="interactive-iframe" id="interactive-gt" loading="lazy"
+              title="Ground truth viewer"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section dataset-section is-hidden" id="dataset">
+    <div class="container is-max-widescreen">
+      <h2 class="title is-3 has-text-centered" id="dataset-title">World-Ego Point Cloud Review</h2>
+      <p class="dataset-intro" id="dataset-intro-1">UMR review samples are served through the interactive section.</p>
+      <p class="dataset-intro" id="dataset-intro-2">This hidden template can be re-enabled when final annotation assets
+        are available.</p>
+    </div>
+  </section>
+
+  <section class="section" id="experiments">
+    <div class="container is-max-widescreen">
+      <h2 class="title is-3 has-text-centered">Real-World Experiments</h2>
+      <p class="content has-text-justified" id="experiments-intro">UMR targets long-horizon manipulation under
+        embodiment changes, spatial perturbations, and contact-rich interactions.</p>
+      <div class="columns is-multiline">
+        <div class="column is-half">
+          <div class="box experiment-card has-text-centered">
+            <h3 class="title is-5">Zero-Shot Transfer Trials</h3>
+            <video autoplay class="experiment-video" controls loop muted playsinline>
+              <source src="media/videos/umr-retry-alltime.mp4" type="video/mp4">
+            </video>
+            <video autoplay class="experiment-video" controls loop muted playsinline>
+              <source src="media/videos/umr-retry1.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <div class="column is-half">
+          <div class="box experiment-card has-text-centered">
+            <h3 class="title is-5">Strict Judge Rollouts</h3>
+            <video autoplay class="experiment-video" controls loop muted playsinline>
+              <source src="media/videos/umr-agentview-0.mp4" type="video/mp4">
+            </video>
+            <video autoplay class="experiment-video" controls loop muted playsinline>
+              <source src="media/videos/umr-agentview-1.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <div class="column is-half">
+          <div class="box experiment-card has-text-centered">
+            <h3 class="title is-5">Spatial and Viewpoint Robustness</h3>
+            <video autoplay class="experiment-video" controls loop muted playsinline>
+              <source src="media/videos/umr-agentview-2.mp4" type="video/mp4">
+            </video>
+            <video autoplay class="experiment-video" controls loop muted playsinline>
+              <source src="media/videos/umr-trashsweep-disturbance.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <div class="column is-half">
+          <div class="box experiment-card has-text-centered">
+            <h3 class="title is-5">Data Filtering and Failure Analysis</h3>
+            <video autoplay class="experiment-video" controls loop muted playsinline>
+              <source src="media/umr-rh20t-data-filter.mp4" type="video/mp4">
+            </video>
+            <video autoplay class="experiment-video" controls loop muted playsinline>
+              <source src="media/videos/umr-failure-attach-fall.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </body>
 
 </html>

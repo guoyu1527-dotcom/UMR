@@ -1,0 +1,315 @@
+{
+  "status": "passed",
+  "input": "/home/liusong/datasets/merged_5datasets_rh20t_singleview_smoke_26ep_20260910",
+  "image_key": "observation.images.front",
+  "note": "Recorded RGB demonstrations, not policy evaluation. Source FPS; no interpolation or frame dropping. All output frames decoded for validation.",
+  "total_episodes": 26,
+  "total_frames": 3586,
+  "groups": [
+    {
+      "source": "RH20T",
+      "path": "RH20T_all_episodes.mp4",
+      "frames": 652,
+      "fps": 10,
+      "seconds": 65.2,
+      "episodes": [
+        {
+          "episode_index": 0,
+          "source": "RH20T",
+          "task": "Press the button from top to bottom",
+          "frames": 57,
+          "fps": 10,
+          "seconds": 5.7,
+          "group_start_seconds": 0.0,
+          "path": "RH20T/episode_000000.mp4"
+        },
+        {
+          "episode_index": 1,
+          "source": "RH20T",
+          "task": "Press the button from top to bottom",
+          "frames": 40,
+          "fps": 10,
+          "seconds": 4.0,
+          "group_start_seconds": 5.7,
+          "path": "RH20T/episode_000001.mp4"
+        },
+        {
+          "episode_index": 2,
+          "source": "RH20T",
+          "task": "Pull out a napkin",
+          "frames": 86,
+          "fps": 10,
+          "seconds": 8.6,
+          "group_start_seconds": 9.7,
+          "path": "RH20T/episode_000002.mp4"
+        },
+        {
+          "episode_index": 3,
+          "source": "RH20T",
+          "task": "Pull out a napkin",
+          "frames": 110,
+          "fps": 10,
+          "seconds": 11.0,
+          "group_start_seconds": 18.3,
+          "path": "RH20T/episode_000003.mp4"
+        },
+        {
+          "episode_index": 4,
+          "source": "RH20T",
+          "task": "Grasp the handle and open the drawer",
+          "frames": 203,
+          "fps": 10,
+          "seconds": 20.3,
+          "group_start_seconds": 29.3,
+          "path": "RH20T/episode_000004.mp4"
+        },
+        {
+          "episode_index": 5,
+          "source": "RH20T",
+          "task": "Grasp the handle and open the drawer",
+          "frames": 156,
+          "fps": 10,
+          "seconds": 15.6,
+          "group_start_seconds": 49.6,
+          "path": "RH20T/episode_000005.mp4"
+        }
+      ]
+    },
+    {
+      "source": "LIBERO",
+      "path": "LIBERO_all_episodes.mp4",
+      "frames": 1364,
+      "fps": 20,
+      "seconds": 68.2,
+      "episodes": [
+        {
+          "episode_index": 6,
+          "source": "LIBERO",
+          "task": "pick up the black bowl between the plate and the ramekin and place it on the plate",
+          "frames": 85,
+          "fps": 20,
+          "seconds": 4.25,
+          "group_start_seconds": 0.0,
+          "path": "LIBERO/episode_000006.mp4"
+        },
+        {
+          "episode_index": 7,
+          "source": "LIBERO",
+          "task": "pick up the black bowl between the plate and the ramekin and place it on the plate",
+          "frames": 167,
+          "fps": 20,
+          "seconds": 8.35,
+          "group_start_seconds": 4.25,
+          "path": "LIBERO/episode_000007.mp4"
+        },
+        {
+          "episode_index": 8,
+          "source": "LIBERO",
+          "task": "pick up the alphabet soup and place it in the basket",
+          "frames": 171,
+          "fps": 20,
+          "seconds": 8.55,
+          "group_start_seconds": 12.6,
+          "path": "LIBERO/episode_000008.mp4"
+        },
+        {
+          "episode_index": 9,
+          "source": "LIBERO",
+          "task": "pick up the alphabet soup and place it in the basket",
+          "frames": 148,
+          "fps": 20,
+          "seconds": 7.4,
+          "group_start_seconds": 21.15,
+          "path": "LIBERO/episode_000009.mp4"
+        },
+        {
+          "episode_index": 10,
+          "source": "LIBERO",
+          "task": "open the middle drawer of the cabinet",
+          "frames": 137,
+          "fps": 20,
+          "seconds": 6.85,
+          "group_start_seconds": 28.55,
+          "path": "LIBERO/episode_000010.mp4"
+        },
+        {
+          "episode_index": 11,
+          "source": "LIBERO",
+          "task": "open the middle drawer of the cabinet",
+          "frames": 132,
+          "fps": 20,
+          "seconds": 6.6,
+          "group_start_seconds": 35.4,
+          "path": "LIBERO/episode_000011.mp4"
+        },
+        {
+          "episode_index": 12,
+          "source": "LIBERO",
+          "task": "put both the alphabet soup and the tomato sauce in the basket",
+          "frames": 258,
+          "fps": 20,
+          "seconds": 12.9,
+          "group_start_seconds": 42.0,
+          "path": "LIBERO/episode_000012.mp4"
+        },
+        {
+          "episode_index": 13,
+          "source": "LIBERO",
+          "task": "put both the alphabet soup and the tomato sauce in the basket",
+          "frames": 266,
+          "fps": 20,
+          "seconds": 13.3,
+          "group_start_seconds": 54.9,
+          "path": "LIBERO/episode_000013.mp4"
+        }
+      ]
+    },
+    {
+      "source": "RLBench",
+      "path": "RLBench_all_episodes.mp4",
+      "frames": 976,
+      "fps": 20,
+      "seconds": 48.8,
+      "episodes": [
+        {
+          "episode_index": 14,
+          "source": "RLBench",
+          "task": "close box",
+          "frames": 240,
+          "fps": 20,
+          "seconds": 12.0,
+          "group_start_seconds": 0.0,
+          "path": "RLBench/episode_000014.mp4"
+        },
+        {
+          "episode_index": 15,
+          "source": "RLBench",
+          "task": "close box",
+          "frames": 236,
+          "fps": 20,
+          "seconds": 11.8,
+          "group_start_seconds": 12.0,
+          "path": "RLBench/episode_000015.mp4"
+        },
+        {
+          "episode_index": 16,
+          "source": "RLBench",
+          "task": "sweep dirt to dustpan",
+          "frames": 128,
+          "fps": 20,
+          "seconds": 6.4,
+          "group_start_seconds": 23.8,
+          "path": "RLBench/episode_000016.mp4"
+        },
+        {
+          "episode_index": 17,
+          "source": "RLBench",
+          "task": "sweep dirt to dustpan",
+          "frames": 136,
+          "fps": 20,
+          "seconds": 6.8,
+          "group_start_seconds": 30.2,
+          "path": "RLBench/episode_000017.mp4"
+        },
+        {
+          "episode_index": 18,
+          "source": "RLBench",
+          "task": "water plant",
+          "frames": 117,
+          "fps": 20,
+          "seconds": 5.85,
+          "group_start_seconds": 37.0,
+          "path": "RLBench/episode_000018.mp4"
+        },
+        {
+          "episode_index": 19,
+          "source": "RLBench",
+          "task": "water plant",
+          "frames": 119,
+          "fps": 20,
+          "seconds": 5.95,
+          "group_start_seconds": 42.85,
+          "path": "RLBench/episode_000019.mp4"
+        }
+      ]
+    },
+    {
+      "source": "DynamicCube",
+      "path": "DynamicCube_all_episodes.mp4",
+      "frames": 151,
+      "fps": 15,
+      "seconds": 10.066666666666666,
+      "episodes": [
+        {
+          "episode_index": 20,
+          "source": "DynamicCube",
+          "task": "Place the Red Cube on the Blue Cube",
+          "frames": 100,
+          "fps": 15,
+          "seconds": 6.666666666666667,
+          "group_start_seconds": 0.0,
+          "path": "DynamicCube/episode_000020.mp4"
+        },
+        {
+          "episode_index": 21,
+          "source": "DynamicCube",
+          "task": "Place the Red Cube on the Blue Cube",
+          "frames": 51,
+          "fps": 15,
+          "seconds": 3.4,
+          "group_start_seconds": 6.666666666666667,
+          "path": "DynamicCube/episode_000021.mp4"
+        }
+      ]
+    },
+    {
+      "source": "StageGenMerged",
+      "path": "StageGenMerged_all_episodes.mp4",
+      "frames": 443,
+      "fps": 15,
+      "seconds": 29.533333333333335,
+      "episodes": [
+        {
+          "episode_index": 22,
+          "source": "StageGenMerged",
+          "task": "Fold the towel. first from the bottom right to the top left, then from the bottom left to the top right.",
+          "frames": 152,
+          "fps": 15,
+          "seconds": 10.133333333333333,
+          "group_start_seconds": 0.0,
+          "path": "StageGenMerged/episode_000022.mp4"
+        },
+        {
+          "episode_index": 23,
+          "source": "StageGenMerged",
+          "task": "Fold the towel. first from the bottom right to the top left, then from the bottom left to the top right.",
+          "frames": 140,
+          "fps": 15,
+          "seconds": 9.333333333333334,
+          "group_start_seconds": 10.133333333333333,
+          "path": "StageGenMerged/episode_000023.mp4"
+        },
+        {
+          "episode_index": 24,
+          "source": "StageGenMerged",
+          "task": "Sweep the trash to the dustbin",
+          "frames": 66,
+          "fps": 15,
+          "seconds": 4.4,
+          "group_start_seconds": 19.466666666666665,
+          "path": "StageGenMerged/episode_000024.mp4"
+        },
+        {
+          "episode_index": 25,
+          "source": "StageGenMerged",
+          "task": "Sweep the trash to the dustbin",
+          "frames": 85,
+          "fps": 15,
+          "seconds": 5.666666666666667,
+          "group_start_seconds": 23.866666666666667,
+          "path": "StageGenMerged/episode_000025.mp4"
+        }
+      ]
+    }
+  ]
+}
