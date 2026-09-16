@@ -57,15 +57,9 @@ window.addEventListener('DOMContentLoaded', function () {
       '&initialCameraLookAt=' + encodeURIComponent(camera.lookAt) +
       '&initialCameraUp=' + encodeURIComponent(camera.up) + (dockPlayback ? '&pwDockPlayback=1' : '');
   }
-  async function recordingExists(base, filename) {
-    try { var r = await fetch(base + '/' + filename, { method: 'HEAD', cache: 'no-store' }); return r.ok } catch (e) { return false }
-  }
-
   async function loadViewer(viewer, banner, base, filename, camera, dockPlayback) {
     if (!viewer) return;
 
-    // 诊断阶段：跳过会被匿名网页 CORS 拦截的 HEAD 请求。
-    // 直接尝试加载 Viser，确认是否还有下一层错误。
     viewer.src = buildViewerSrc(base, filename, camera, dockPlayback);
 
     viewer.dataset.base = base;
